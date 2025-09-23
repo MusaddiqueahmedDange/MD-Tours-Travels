@@ -109,3 +109,27 @@
     display: block; /* show hamburger */
   }
 }
+
+@media screen and (max-width: 1250px) {
+  .nav-links {
+    display: none; /* hide desktop nav */
+  }
+  .menu-btn {
+    display: block; /* show hamburger */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar .logo-title h1 {
+    font-size: 17px;
+    margin-left: 4px;
+  }
+  .navbar .logo-title p {
+    font-size: 10px;
+    margin: 0 0 0 15px;
+  }
+  .navbar .logo-title .logo {
+    width: 50px;
+    height: 50px;
+  }
+}
