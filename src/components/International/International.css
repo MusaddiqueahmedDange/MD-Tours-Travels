@@ -1,0 +1,152 @@
+.gridCard {
+  width: 90%;
+  height: 500px;
+  display: flex;
+  justify-content: space-around;
+  min-width: fit-content !important;
+}
+.button2 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .gridCard {
+    width: auto; /* Adjust width for smaller screens */
+    height: auto; /* Let height adjust automatically */
+    flex-grow: 1;
+  }
+}
+
+/* 🔹 Default styles (Desktop first approach) */
+
+/* Small phones (321px - 480px) */
+@media (max-width: 480px) {
+  /* styles */
+  .gridCard {
+    width: auto; /*  Adjust width for smaller screens */
+    height: auto; /* Let height adjust automatically */
+    flex-grow: 1;
+  }
+}
+
+/* Large phones (481px - 600px) */
+@media (max-width: 600px) {
+  /* styles */
+  .gridCard {
+    width: auto; /* ; Adjust width for smaller screens */
+    height: auto; /* Let height adjust automatically */
+    flex-grow: 1;
+  }
+}
+
+/* Small tablets (601px - 768px) */
+@media (max-width: 768px) {
+  /* styles */
+  .gridCard {
+    width: auto; /*  Adjust width for smaller screens */
+    height: auto; /* Let height adjust automatically */
+    flex-grow: 1;
+  }
+}
+
+/* Tablets (769px - 900px) */
+@media (max-width: 900px) {
+  /* styles */
+  .gridCard {
+    width: auto; /*  Adjust width for smaller screens */
+    height: auto; /* Let height adjust automatically */
+    flex-grow: 1;
+  }
+}
+
+/* Small laptops (901px - 1024px) */
+@media (max-width: 1024px) {
+  /* styles */
+  .gridCard {
+    width: max-content; /*  Adjust width for smaller screens */
+    height: auto; /* Let height adjust automatically */
+    flex-grow: 1;
+  }
+}
+
+/* Medium laptops (1025px - 1200px) */
+@media (max-width: 1200px) {
+  /* styles */
+  .gridCard {
+    width: max-content; /* Adjust width for smaller screens */
+    height: auto; /* Let height adjust automatically */
+    flex-grow: 1;
+  }
+}
+
+/* Standard desktops (1201px - 1366px) */
+@media (max-width: 1366px) {
+  /* styles */
+  .gridCard {
+    width: max-content; /* Adjust width for smaller screens */
+    height: auto; /* Let height adjust automatically */
+    flex-grow: 1;
+  }
+}
+
+/* Large desktops (1367px - 1440px) */
+@media (max-width: 1440px) {
+  /* styles */
+  .gridCard {
+    width: 90%; /* Adjust width for smaller screens */
+    height: auto; /* Let height adjust automatically */
+    flex-grow: 1;
+  }
+}
+
+/* Extra large desktops (1441px - 1600px) */
+@media (max-width: 1600px) {
+  /* styles */
+  .gridCard {
+    width: 90%; /* Adjust width for smaller screens */
+    height: auto; /* Let height adjust automatically */
+    flex-grow: 1;
+  }
+}
+
+/* Full HD screens (1601px - 1920px) */
+@media (max-width: 1920px) {
+  /* styles */
+  .gridCard {
+    width: 90%; /* Adjust width for smaller screens */
+    height: auto; /* Let height adjust automatically */
+    flex-grow: 1;
+  }
+}
+
+/* 2K screens (1921px - 2560px) */
+@media (max-width: 2560px) {
+  /* styles */
+  .gridCard {
+    width: 90%; /* Adjust width for smaller screens */
+    height: auto; /* Let height adjust automatically */
+    flex-grow: 1;
+  }
+}
+
+/* 4K Ultra HD screens (2561px - 3440px) */
+@media (max-width: 3440px) {
+  /* styles */
+  .gridCard {
+    width: 90%; /* Adjust width for smaller screens */
+    height: auto; /* Let height adjust automatically */
+    flex-grow: 1;
+  }
+}
+
+/* 5K & 8K screens (3441px and above) */
+@media (max-width: 3840px) {
+  /* styles */
+  .gridCard {
+    width: 90%; /* Adjust width for smaller screens */
+    height: auto; /* Let height adjust automatically */
+    flex-grow: 1;
+  }
+}

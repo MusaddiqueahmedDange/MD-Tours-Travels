@@ -1,0 +1,111 @@
+/* Base Navbar */
+.navbar {
+  background: #183048;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-image: linear-gradient(to right, #183048, #356da5);
+}
+
+/* Logo + Title */
+.logo-title {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  width: 80px;
+  height: 80px;
+  margin-right: 0.5rem;
+  border-radius: 50px;
+}
+.logo-title h1 {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: monospace;
+  margin: 0 0 0 20px;
+}
+
+.titleContainer p {
+  margin: 2px 0 0 80px;
+  font-size: 15px;
+  font-style: italic;
+  font-family: monospace;
+}
+
+/* Desktop Nav Links */
+.nav-links {
+  display: flex;
+  gap: 70px;
+  list-style: none;
+  text-decoration: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.nav-links a:hover {
+  color: #183048;
+  background-color: white;
+  padding: 3px;
+  border-radius: 2px;
+}
+
+/* Mobile Button */
+.menu-btn {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Sidebar (Mobile Navigation) */
+.sidebar {
+  background: white;
+  color: #333;
+  /* position: absolute; */
+  top: 64px; /* height of navbar */
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  justify-content: center;
+  display: flex;
+}
+.sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.sidebar a {
+  text-decoration: none;
+  color: #183048;
+  padding: 10px 100px;
+  border-radius: 5px;
+}
+.sidebar li {
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+.sidebar a:hover {
+  color: white;
+  background-color: #183048;
+  background-size: contain;
+  font-weight: 600;
+}
+
+/* ✅ Responsive Rules */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none; /* hide desktop nav */
+  }
+  .menu-btn {
+    display: block; /* show hamburger */
+  }
+}

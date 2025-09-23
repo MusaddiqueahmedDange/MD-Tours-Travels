@@ -1,0 +1,14 @@
+.about {
+  font-family: sans-serif;
+  padding: 30px;
+}
+.whoWeR {
+  line-height: 25px;
+  font-size: 20px;
+  color: #21456a;
+}
+.aboutPoints li {
+  line-height: 25px;
+  font-size: 20px;
+  color: #21456a;
+}

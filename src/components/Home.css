@@ -1,0 +1,24 @@
+/* slick carousel styles */
+.slick-slider {
+  overflow: hidden;
+}
+.discover {
+  margin: 20px;
+}
+.relative {
+  height: auto;
+}
+.relative button a {
+  text-decoration: none;
+  color: white;
+}
+.relative button:hover {
+  background-color: #1e65ac;
+}
+.slick-slide img {
+  width: 100%;
+  height: 450px;
+  display: flex;
+}
+
+/* -------------------------- */
