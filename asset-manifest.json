@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/MD-Tours-Travels/static/css/main.84661ea1.css",
+    "main.css": "/MD-Tours-Travels/static/css/main.3f7a8b67.css",
     "main.js": "/MD-Tours-Travels/static/js/main.fa71a522.js",
     "static/js/453.0f599d34.chunk.js": "/MD-Tours-Travels/static/js/453.0f599d34.chunk.js",
     "static/media/hero1.png": "/MD-Tours-Travels/static/media/hero1.56f4f317ecfc86fabccf.png",
@@ -26,12 +26,12 @@
     "static/media/slick.ttf": "/MD-Tours-Travels/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/MD-Tours-Travels/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/MD-Tours-Travels/index.html",
-    "main.84661ea1.css.map": "/MD-Tours-Travels/static/css/main.84661ea1.css.map",
+    "main.3f7a8b67.css.map": "/MD-Tours-Travels/static/css/main.3f7a8b67.css.map",
     "main.fa71a522.js.map": "/MD-Tours-Travels/static/js/main.fa71a522.js.map",
     "453.0f599d34.chunk.js.map": "/MD-Tours-Travels/static/js/453.0f599d34.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.84661ea1.css",
+    "static/css/main.3f7a8b67.css",
     "static/js/main.fa71a522.js"
   ]
 }
