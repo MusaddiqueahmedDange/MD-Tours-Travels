@@ -39,7 +39,7 @@ const Footer = () => {
             <FaTwitter size={24} color="white" />
           </a>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/mdtravels_2025?igsh=MW9ydHpjNW9qNDc5aw=="
             target="_blank"
             rel="noopener noreferrer"
           >

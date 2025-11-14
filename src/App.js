@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import International from "./components/International/International";
 import Domestic from "./components/Domestic/Domestic";
-import About from "./components/About";
+import About from "./components/About/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import DestinationDetail from "./components/International/DestinationDetail";
