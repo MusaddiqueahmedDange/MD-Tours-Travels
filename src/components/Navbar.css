@@ -1,12 +1,13 @@
 /* Base Navbar */
 .navbar {
-  background: #183048;
+  /* background: #183048; */
+  background: white;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-image: linear-gradient(to right, #183048, #356da5);
+  /* background-image: linear-gradient(to right, #183048, #356da5); */
 }
 
 /* Logo + Title */
@@ -15,16 +16,17 @@
   align-items: center;
 }
 .logo {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   margin-right: 0.5rem;
-  border-radius: 50px;
+  /* border-radius: 50px; */
 }
 .logo-title h1 {
   font-size: 30px;
   font-weight: bold;
   font-family: monospace;
   margin: 0 0 0 20px;
+  color: #183048;
 }
 
 .titleContainer p {
@@ -32,6 +34,7 @@
   font-size: 15px;
   font-style: italic;
   font-family: monospace;
+  color: #183048;
 }
 
 /* Desktop Nav Links */
@@ -40,17 +43,18 @@
   gap: 70px;
   list-style: none;
   text-decoration: none;
+  color: #183048;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: white;
+  color: #183048;
   font-size: 20px;
 }
 
 .nav-links a:hover {
   color: #183048;
-  background-color: white;
+  text-decoration: underline;
   padding: 3px;
   border-radius: 2px;
 }
@@ -61,7 +65,7 @@
   font-size: 35px;
   background: none;
   border: none;
-  color: white;
+  color: #183048;
   cursor: pointer;
 }
 

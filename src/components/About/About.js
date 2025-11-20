@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./About.css";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import teamMembers from "./AboutData";
 import partners from "./tradePrtners";
 import hotels from "./hotelPartners";
@@ -71,9 +73,10 @@ function About() {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
-      { breakpoint: 1024, settingsReview: { slidesToShow: 2 } },
-      { breakpoint: 768, settingsReview: { slidesToShow: 1, arrows: false } },
-      { breakpoint: 480, settingsReview: { slidesToShow: 1, arrows: false } },
+      { breakpoint: 1200, settings: { slidesToShow: 2 } },
+      { breakpoint: 900, settings: { slidesToShow: 1 } }, // 📱 Always 1 on tablets
+      { breakpoint: 600, settings: { slidesToShow: 1 } }, // 📱 Always 1 on mobile
+      { breakpoint: 480, settings: { slidesToShow: 1 } }, // 📱 Always 1 on very small screen
     ],
   };
 
