@@ -7,7 +7,7 @@ import Domestic from "./components/Domestic/Domestic";
 import About from "./components/About/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import DestinationDetail from "./components/International/DestinationDetail";
+// import DestinationDetail from "./components/International/DestinationDetail";
 import DomesticDetail from "./components/Domestic/DomesticDetail";
 import "./App.css";
 
@@ -24,7 +24,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             {/* <Route path="/" element={<International />} /> */}
-            <Route path="/international/:id" element={<DestinationDetail />} />
+            {/* <Route path="/international/:id" element={<DestinationDetail />} /> */}
             <Route path="/domestic/:id" element={<DomesticDetail />} />
           </Routes>
         </div>

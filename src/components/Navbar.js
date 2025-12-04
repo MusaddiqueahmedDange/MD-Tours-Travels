@@ -16,10 +16,7 @@ export default function Navbar() {
           </a>
           <div className="titleContainer">
             <h1>M D Tours and Travels</h1>
-            <p>
-              Travel with Ease, Travel with Us..
-              <span style={{ fontSize: "25px" }}>&#x2708;</span>
-            </p>
+            <p>Travel with Ease, Travel with Us..</p>
           </div>
         </div>
 
