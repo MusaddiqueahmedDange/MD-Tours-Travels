@@ -15,6 +15,7 @@ const international = [
     title: "Bali Retreat",
     description: "7 Days 6 Nights of serene beaches and cultural immersion.",
     image: bali,
+    images: [bali, lanka, bangkok],
     overview:
       "Experience the magic of Bali with its stunning rice paddies, ancient temples, and vibrant art scene. Perfect for relaxation and adventure.",
     duration: "7 Days / 6 Nights",
@@ -59,6 +60,20 @@ const international = [
         details: "Transfer to Denpasar International Airport.",
       },
     ],
+    inclusions: [
+      "Accommodation in 4-star hotels",
+      "Daily breakfast",
+      "Airport transfers",
+      "Guided tours as per itinerary",
+      "All entrance fees",
+    ],
+    exclusions: [
+      "International airfare",
+      "Travel insurance",
+      "Personal expenses",
+      "Meals not mentioned in inclusions",
+    ],
+
     whatsappNumber: "919876543210",
   },
 

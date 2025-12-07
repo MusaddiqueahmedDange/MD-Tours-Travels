@@ -28,35 +28,82 @@ import international from "./destinationsData";
 import "./International.css";
 
 // Assuming a default WhatsApp number
-const WHATSAPP_NUMBER = "919876543210";
+const WHATSAPP_NUMBER = "917337864840";
 const ITEMS_PER_PAGE = 10; // Set to 10 cards per page
 
-// --- Dummy Data Structure for Fallback (Simplified for clarity) ---
-const dummyDest = {
-  overview: [
-    "Explore the historical and modern wonders of the destination.",
-    "A perfectly balanced trip combining city tours and relaxation.",
-  ],
-  itinerary: [
-    {
-      day: 1,
-      title: "Arrival and Orientation",
-      details: ["Meet and greet.", "Transfer to hotel."],
-    },
-    {
-      day: 2,
-      title: "Historical Landmarks Tour",
-      details: ["Full-day tour.", "Visit local market."],
-    },
-  ],
-  inclusions: [
-    "4 nights stay in a 4-star hotel",
-    "Daily buffet breakfast and dinner",
-  ],
-  exclusions: [
-    "International and domestic airfare",
-    "Visa fees and processing charges",
-  ],
+// Fallback constant for missing images
+const FALLBACK_PLACEHOLDER =
+  "https://placehold.co/800x500/cccccc/333333?text=Image+Unavailable";
+
+// -------------------------------------------------------------------
+// NEW: Image Gallery Component
+// -------------------------------------------------------------------
+
+const ImageGallery = ({ images, title }) => {
+  // Filter out any potentially null/undefined/empty string images
+  const validImages = images.filter((img) => img);
+
+  // Use the first valid image as the initial main image
+  const [mainImage, setMainImage] = useState(
+    validImages[0] || FALLBACK_PLACEHOLDER
+  );
+
+  // Re-sync the main image if the destination changes
+  useEffect(() => {
+    setMainImage(validImages[0] || FALLBACK_PLACEHOLDER);
+  }, [images]);
+
+  if (validImages.length === 0) {
+    return (
+      <div className="detail-image-wrapper">
+        <img
+          src={FALLBACK_PLACEHOLDER}
+          alt={`Image for ${title}`}
+          className="detail-hero-image"
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div className="detail-image-gallery">
+      {/* Main Display Image */}
+      <div className="detail-main-image-wrapper">
+        <img
+          src={mainImage}
+          alt={`Main image of ${title}`}
+          className="detail-hero-image"
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = FALLBACK_PLACEHOLDER;
+          }}
+        />
+      </div>
+
+      {/* Thumbnails */}
+      {validImages.length > 1 && (
+        <div className="detail-thumbnails-container">
+          {validImages.map((imgUrl, index) => (
+            <img
+              key={index}
+              src={imgUrl}
+              alt={`Thumbnail ${index + 1} of ${title}`}
+              className={`detail-thumbnail-image ${
+                imgUrl === mainImage ? "active" : ""
+              }`}
+              onClick={() => setMainImage(imgUrl)}
+              onError={(e) => {
+                e.target.onerror = null;
+                // Use a smaller placeholder for broken thumbnails
+                e.target.src =
+                  "https://placehold.co/100x70/bbbbbb/333333?text=N/A";
+              }}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
 };
 
 // -------------------------------------------------------------------
@@ -101,12 +148,28 @@ const DestinationDetailView = ({ dest, setSelectedDestination }) => {
     );
   }
 
+  // Determine the list of images for the gallery.
+  // It MUST be an array from dest.images, or an array containing the single dest.image, or an empty array.
+  const detailImages =
+    Array.isArray(dest.images) && dest.images.length > 0
+      ? dest.images
+      : dest.image
+      ? [dest.image]
+      : [];
+
   const currentDest = {
     ...dest,
-    // Use dummy data as fallback/if missing
-    ...dummyDest,
-    overview: dest.overview ? [dest.overview] : dummyDest.overview,
-    itinerary: dest.itinerary || dummyDest.itinerary,
+    // Use the determined image list
+    images: detailImages,
+    // Ensure these properties exist, otherwise they will be undefined/null
+    overview: Array.isArray(dest.overview)
+      ? dest.overview
+      : dest.overview
+      ? [dest.overview]
+      : [],
+    itinerary: dest.itinerary || [],
+    inclusions: dest.inclusions || [],
+    exclusions: dest.exclusions || [],
   };
 
   // State for Accordions (Itinerary)
@@ -135,7 +198,7 @@ const DestinationDetailView = ({ dest, setSelectedDestination }) => {
   const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=I%20am%20interested%20in%20the%20${encodeURIComponent(
     currentDest.title
   )}%20package%20(${encodeURIComponent(
-    currentDest.duration
+    currentDest.duration || "N/A"
   )}).%20Please%20send%20me%20booking%20details.`;
 
   // 1. Overview Accordion Component
@@ -229,19 +292,8 @@ const DestinationDetailView = ({ dest, setSelectedDestination }) => {
       <div className="detail-main-content">
         {/* LEFT COLUMN */}
         <div className="detail-primary-column">
-          {/* Image */}
-          <div className="detail-image-wrapper">
-            <img
-              src={currentDest.image}
-              alt={currentDest.title}
-              className="detail-hero-image"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src =
-                  "https://placehold.co/800x500/cccccc/333333?text=Destination+Image+Unavailable";
-              }}
-            />
-          </div>
+          {/* Image Gallery */}
+          <ImageGallery images={currentDest.images} title={currentDest.title} />
 
           {/* Title and Duration Tag moved here, just below the image */}
           <div className="title-and-duration-info">
@@ -376,7 +428,7 @@ const International = () => {
     return allDestinations.filter(
       (dest) =>
         dest.title.toLowerCase().includes(lowerCaseSearch) ||
-        dest.duration.toLowerCase().includes(lowerCaseSearch)
+        (dest.duration && dest.duration.toLowerCase().includes(lowerCaseSearch))
     );
   }, [searchTerm, allDestinations]); // Dependencies: recalculate only when search term or data changes
 
@@ -471,10 +523,11 @@ const International = () => {
                       onClick={() => setSelectedDestination(dest)}
                       className="card-click-area"
                     >
+                      {/* CARD LIST VIEW: Use dest.image (single string) */}
                       <CardMedia
                         component="img"
                         height="200"
-                        image={dest.image}
+                        image={dest.image || FALLBACK_PLACEHOLDER}
                         alt={dest.title}
                       />
                       <CardContent className="card-info-content">

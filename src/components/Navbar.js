@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
@@ -6,8 +6,24 @@ import logo from "../assets/logo.png";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  // 1. Add logic to close the sidebar on resize for larger screens
+  useEffect(() => {
+    const handleResize = () => {
+      // Assuming 768px is the breakpoint for mobile menu
+      if (window.innerWidth > 768 && open) {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [open]);
+
   return (
-    <header>
+    <header className="fixed-header">
       {/* Top Navbar */}
       <nav className="navbar">
         <div className="logo-title">
@@ -25,6 +41,7 @@ export default function Navbar() {
           <Link to="/">Home</Link>
           <Link to="/international">International</Link>
           <Link to="/domestic">Domestic</Link>
+          <Link to="/cruise">Cruise</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
         </div>
@@ -47,6 +64,9 @@ export default function Navbar() {
             </li>
             <li onClick={() => setOpen(false)}>
               <Link to="/domestic">Domestic</Link>
+            </li>
+            <li onClick={() => setOpen(false)}>
+              <Link to="/cruise">Cruise</Link>
             </li>
             <li onClick={() => setOpen(false)}>
               <Link to="/about">About</Link>

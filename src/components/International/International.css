@@ -302,7 +302,14 @@ html,
   display: none;
 }
 
-.detail-image-wrapper {
+/* --- NEW: Image Gallery Styles --- */
+.detail-image-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detail-main-image-wrapper {
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -316,7 +323,36 @@ html,
   display: block;
 }
 
-/* --- Accordion Specific Styling --- */
+.detail-thumbnails-container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto; /* Allows horizontal scrolling for many images */
+  gap: 10px;
+  padding-bottom: 5px; /* Space for scrollbar */
+}
+
+.detail-thumbnail-image {
+  width: 98px; /* Fixed width for thumbnails */
+  height: 70px; /* Fixed height for thumbnails */
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  flex-shrink: 0; /* Prevents thumbnails from shrinking */
+}
+
+.detail-thumbnail-image:hover {
+  opacity: 1;
+}
+
+.detail-thumbnail-image.active {
+  border-color: #2575fc; /* Highlight color for the active image */
+  opacity: 1;
+}
+
+/* --- Accordion Specific Styling (Rest remains unchanged) --- */
 .detail-itinerary-accordion.MuiAccordion-root {
   border-radius: 12px !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
