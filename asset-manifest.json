@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/MD-Tours-Travels/static/css/main.8a94b91f.css",
-    "main.js": "/MD-Tours-Travels/static/js/main.4ae277f4.js",
+    "main.css": "/MD-Tours-Travels/static/css/main.fb114443.css",
+    "main.js": "/MD-Tours-Travels/static/js/main.ef9fcc46.js",
     "static/js/453.6d2d053f.chunk.js": "/MD-Tours-Travels/static/js/453.6d2d053f.chunk.js",
+    "static/media/international.png": "/MD-Tours-Travels/static/media/international.be4fc7b6f6d7142915a0.png",
     "static/media/hero3.mp4": "/MD-Tours-Travels/static/media/hero3.653c421a722cff1db8e3.mp4",
     "static/media/hero1.mp4": "/MD-Tours-Travels/static/media/hero1.f8ab38d0b38c8d509299.mp4",
     "static/media/hero2.mp4": "/MD-Tours-Travels/static/media/hero2.9dfff5690eb7ebd704d3.mp4",
     "static/media/mujeeb.png": "/MD-Tours-Travels/static/media/mujeeb.99bacd6b97576891bffe.png",
     "static/media/lonavala.png": "/MD-Tours-Travels/static/media/lonavala.a6e3ac5a6fe10c502e84.png",
-    "static/media/Golden-tringle.png": "/MD-Tours-Travels/static/media/Golden-tringle.e4bc6a567b6e736c8fb4.png",
+    "static/media/leh1.png": "/MD-Tours-Travels/static/media/leh1.8da9e74185756f1d678b.png",
     "static/media/image1.png": "/MD-Tours-Travels/static/media/image1.ce4439abf34d58c9f4cd.png",
-    "static/media/leh-ladakh.png": "/MD-Tours-Travels/static/media/leh-ladakh.8ac4e62d100489a499a5.png",
+    "static/media/domBanner.png": "/MD-Tours-Travels/static/media/domBanner.51e0946de629455b0442.png",
     "static/media/bali.png": "/MD-Tours-Travels/static/media/bali.a6130af83b5853de94b1.png",
     "static/media/kashmir.png": "/MD-Tours-Travels/static/media/kashmir.5c85f493b72cb6c21b93.png",
     "static/media/lanka.png": "/MD-Tours-Travels/static/media/lanka.4d3728b77268c60e45bc.png",
     "static/media/bangkok.png": "/MD-Tours-Travels/static/media/bangkok.cc863885b5e4a4f26254.png",
-    "static/media/nashik.png": "/MD-Tours-Travels/static/media/nashik.ed01d527b528bba6583e.png",
     "static/media/arunachal.png": "/MD-Tours-Travels/static/media/arunachal.7be9cdc19830d8e6a04a.png",
-    "static/media/chikmagalur2.png": "/MD-Tours-Travels/static/media/chikmagalur2.e24927ebbef6c532e68e.png",
     "static/media/singair.png": "/MD-Tours-Travels/static/media/singair.99e1ca1068f68e22473b.png",
     "static/media/paris.png": "/MD-Tours-Travels/static/media/paris.ebe6ce639ec2f7552052.png",
     "static/media/tokyo.png": "/MD-Tours-Travels/static/media/tokyo.78d080b1f3c98f80a90b.png",
@@ -47,12 +46,12 @@
     "static/media/slick.ttf": "/MD-Tours-Travels/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/MD-Tours-Travels/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/MD-Tours-Travels/index.html",
-    "main.8a94b91f.css.map": "/MD-Tours-Travels/static/css/main.8a94b91f.css.map",
-    "main.4ae277f4.js.map": "/MD-Tours-Travels/static/js/main.4ae277f4.js.map",
+    "main.fb114443.css.map": "/MD-Tours-Travels/static/css/main.fb114443.css.map",
+    "main.ef9fcc46.js.map": "/MD-Tours-Travels/static/js/main.ef9fcc46.js.map",
     "453.6d2d053f.chunk.js.map": "/MD-Tours-Travels/static/js/453.6d2d053f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8a94b91f.css",
-    "static/js/main.4ae277f4.js"
+    "static/css/main.fb114443.css",
+    "static/js/main.ef9fcc46.js"
   ]
 }
