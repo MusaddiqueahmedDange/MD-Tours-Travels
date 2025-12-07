@@ -14,6 +14,59 @@ html,
 }
 
 /* -------------------------------------------------------------------------------- */
+/* --- UPDATED: HERO BANNER STYLES (Responsive) --- */
+/* -------------------------------------------------------------------------------- */
+
+.hero-banner-container {
+  width: 100%;
+  height: 40vh; /* Fluid height based on viewport height */
+  max-height: 450px; /* Cap maximum height for large screens */
+  min-height: 200px; /* Minimum height for small screens */
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px; /* Spacing below the banner */
+}
+
+.hero-banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the area without distortion */
+  display: block;
+}
+
+.hero-content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for text readability */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.hero-title {
+  color: white;
+  font-size: clamp(2rem, 5vw, 4rem); /* Responsive font size */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+  color: #e0e0e0;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* -------------------------------------------------------------------------------- */
 /* --- LIST VIEW STYLES: HEADING, PAGINATION, CARDS --- */
 /* -------------------------------------------------------------------------------- */
 
@@ -31,13 +84,6 @@ html,
   text-align: center;
   padding: 24px 0;
   margin-bottom: 32px;
-}
-
-.list-heading-text {
-  color: #004a80;
-  font-weight: 500 !important;
-  letter-spacing: 1px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Pagination Container (Re-using this class for general control spacing) */
@@ -104,7 +150,7 @@ html,
 
 /* Card Media/Image Styling */
 .destination-summary-card .MuiCardMedia-img {
-  height: 200px; /* Fixed height for the image area */
+  height: 75%; /* Fixed height for the image area */
   width: 100%; /* Ensure it fills the card width */
   object-fit: cover; /* Important: Ensures the image covers the area without distortion */
 }
@@ -112,7 +158,7 @@ html,
 .card-info-content {
   flex-grow: 0;
   /* Calculate the remaining space (320px total - 200px image height) */
-  height: 120px;
+  height: 80px;
   padding: 16px; /* Standard MUI padding */
   box-sizing: border-box;
 }
@@ -131,7 +177,13 @@ html,
   font-family: "Poppins";
   font-weight: 700;
 }
+.card-icon {
+  display: flex;
+}
 
+.duration {
+  padding-top: 4px;
+}
 .duration-icon-list {
   font-size: 14px;
   margin-right: 4px;
@@ -388,7 +440,7 @@ html,
 }
 
 .whatsapp-contact-button {
-  width: 100%;
+  /* width: 100%; */
   padding: 15px;
   font-size: 18px;
   font-weight: 700;
@@ -454,6 +506,21 @@ html,
 
 /* Tablet and Mobile (max-width: 767px) */
 @media (max-width: 767px) {
+  /* Adjusted hero banner for smaller screens */
+  .hero-banner-container {
+    height: 30vh; /* Make it slightly shorter on mobile */
+    min-height: 180px;
+    margin-bottom: 0;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
   .detail-navigation-header {
     justify-content: flex-start;
     padding-bottom: 10px;

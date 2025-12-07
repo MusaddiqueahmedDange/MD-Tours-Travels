@@ -8,7 +8,7 @@ import About from "./components/About/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 // import DestinationDetail from "./components/International/DestinationDetail";
-import DomesticDetail from "./components/Domestic/DomesticDetail";
+//import DomesticDetail from "./components/Domestic/DomesticDetail";
 import "./App.css";
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             {/* <Route path="/" element={<International />} /> */}
             {/* <Route path="/international/:id" element={<DestinationDetail />} /> */}
-            <Route path="/domestic/:id" element={<DomesticDetail />} />
+            {/* <Route path="/domestic/:id" element={<DomesticDetail />} /> */}
           </Routes>
         </div>
         <Footer />

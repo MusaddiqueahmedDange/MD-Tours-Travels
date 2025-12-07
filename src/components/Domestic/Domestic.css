@@ -1,153 +1,570 @@
-.gridCard {
-  width: 90%;
-  height: 500px;
+/* -------------------------------------------------------------------------------- */
+/* --- GENERAL STYLES & FONT IMPORT (From Home.css) --- */
+/* -------------------------------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+body,
+html,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: "Poppins", sans-serif;
+  background-color: #f7f7f7; /* Global background for a clean look */
+}
+
+/* -------------------------------------------------------------------------------- */
+/* --- UPDATED: HERO BANNER STYLES (Responsive) --- */
+/* -------------------------------------------------------------------------------- */
+
+.hero-banner-container {
+  width: 100%;
+  height: 40vh; /* Fluid height based on viewport height */
+  max-height: 450px; /* Cap maximum height for large screens */
+  min-height: 200px; /* Minimum height for small screens */
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px; /* Spacing below the banner */
+}
+
+.hero-banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the area without distortion */
+  display: block;
+}
+
+.hero-content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for text readability */
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.hero-title {
+  color: white;
+  font-size: clamp(2rem, 5vw, 4rem); /* Responsive font size */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+  color: #e0e0e0;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* -------------------------------------------------------------------------------- */
+/* --- LIST VIEW STYLES: HEADING, PAGINATION, CARDS --- */
+/* -------------------------------------------------------------------------------- */
+
+.domestic-list-container {
+  /* Utilizing 90% of the screen width for large displays */
+  max-width: 95% !important;
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Main Heading Box */
+.list-heading-wrapper {
+  text-align: center;
+  padding: 24px 0;
+  margin-bottom: 32px;
+}
+
+/* Pagination Container (Re-using this class for general control spacing) */
+.pagination-controls-container {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.list-pagination-bottom {
+  margin-top: 40px;
+  margin-bottom: 40px; /* Ensure spacing below the pagination */
+}
+
+/* Pagination Styling */
+.styled-pagination .MuiPaginationItem-root {
+  color: #6a11cb;
+}
+.styled-pagination .MuiPaginationItem-root.Mui-selected {
+  background-color: #2575fc;
+  color: white;
+}
+.styled-pagination .MuiPaginationItem-root:hover:not(.Mui-selected) {
+  background-color: #e0e0e0;
+}
+
+/* Card Grid */
+.destination-card-grid {
+  width: 100%;
+  /* Removed fixed max-width for better use of 90% container width */
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
   min-width: fit-content !important;
+  padding: 0 0 20px 0;
 }
 
-.button1 {
+/* Individual Card - FIXED SIZE */
+.destination-summary-card {
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  width: 310px;
+  /* Enforce a total fixed height for the card */
+  height: 320px;
   display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-@media (max-width: 768px) {
-  .gridCard {
-    width: auto; /* Adjust width for smaller screens */
-    height: auto; /* Let height adjust automatically */
-    flex-grow: 1;
+.destination-summary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-click-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Card Media/Image Styling */
+.destination-summary-card .MuiCardMedia-img {
+  height: 75%; /* Fixed height for the image area */
+  width: 100%; /* Ensure it fills the card width */
+  object-fit: cover; /* Important: Ensures the image covers the area without distortion */
+}
+
+.card-info-content {
+  flex-grow: 0;
+  /* Calculate the remaining space (320px total - 200px image height) */
+  height: 80px;
+  padding: 16px; /* Standard MUI padding */
+  box-sizing: border-box;
+}
+
+/* To prevent Typography elements from breaking the fixed height */
+.card-info-content h6 {
+  /* Limit title to 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  max-height: 2.8em; /* 2 lines * 1.4 line height */
+  margin-bottom: 4px !important;
+  font-family: "Poppins";
+  font-weight: 700;
+}
+.card-icon {
+  display: flex;
+}
+
+.duration {
+  padding-top: 4px;
+}
+.duration-icon-list {
+  font-size: 14px;
+  margin-right: 4px;
+  font-family: "Poppins";
+}
+
+.empty-results-message {
+  padding: 40px;
+  color: #6a11cb;
+}
+
+/* -------------------------------------------------------------------------------- */
+/* --- FULL-PAGE DETAIL VIEW STYLES --- */
+/* -------------------------------------------------------------------------------- */
+.destination-detail-page {
+  padding: 0;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.detail-navigation-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px 20px 15px 20px;
+  border-bottom: 2px solid #e0e0e0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.back-to-list-button {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  text-transform: none;
+}
+
+.back-to-list-button:hover {
+  background-color: #f0f0f0;
+  border-color: #a0a0a0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title-and-duration-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 0 20px;
+}
+
+.title-and-duration-info h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+.duration-label {
+  background: linear-gradient(45deg, #ff6b6b 0%, #ee5253 100%);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(238, 82, 83, 0.4);
+}
+
+.duration-icon {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.detail-main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  padding: 0 20px 20px 20px;
+}
+
+.detail-primary-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.detail-secondary-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.overview-mobile-container {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.overview-desktop-container {
+  display: none;
+}
+
+.detail-image-wrapper {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.detail-hero-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- Accordion Specific Styling --- */
+.detail-itinerary-accordion.MuiAccordion-root {
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.detail-itinerary-accordion.MuiAccordion-root:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.detail-itinerary-accordion .MuiAccordionSummary-root {
+  background-color: #e6f7ff;
+  color: #004a80;
+  border-bottom: 1px solid #cceeff;
+}
+
+.detail-inclusions-accordion .MuiAccordionSummary-root {
+  background-color: #f1fff1;
+}
+
+.detail-exclusions-accordion .MuiAccordionSummary-root {
+  background-color: #fff1f1;
+}
+
+.detail-itinerary-accordion .accordion-main-title {
+  font-weight: 700;
+  color: #004a80;
+}
+
+.day-plan-accordion .MuiAccordionSummary-root {
+  background-color: #ffffff;
+  border-bottom: 1px solid #f0f0f0;
+  font-weight: 500;
+}
+
+.day-title-emphasis {
+  font-weight: 700;
+}
+
+.itinerary-action-controls {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+}
+
+.itinerary-toggle-button {
+  margin-right: 8px !important;
+  text-transform: none !important;
+}
+
+/* --- List Styling for ALL Accordion Details --- */
+.detail-info-list,
+.day-detail-list {
+  list-style: disc;
+  padding: 0 0 0 20px;
+  margin: 0;
+}
+
+.detail-info-list li,
+.day-detail-list li {
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+/* --- List Styling for Inclusions/Exclusions (Custom Icons) --- */
+.inclusion-custom-list,
+.exclusion-custom-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.inclusion-custom-list li,
+.exclusion-custom-list li {
+  padding: 8px 0 8px 30px;
+  position: relative;
+  line-height: 1.4;
+  border-bottom: 1px dashed #f0f0f0;
+}
+
+.inclusion-custom-list li:last-child,
+.exclusion-custom-list li:last-child {
+  border-bottom: none;
+}
+
+/* Custom Green Checkmark for Inclusions */
+.inclusion-custom-list li::before {
+  content: "✓";
+  color: #28a745;
+  font-weight: 700;
+  font-size: 1.2em;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Custom Red Cross Mark for Exclusions */
+.exclusion-custom-list li::before {
+  content: "✗";
+  color: #dc3545;
+  font-weight: 700;
+  font-size: 1.2em;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Booking Actions Box */
+.contact-action-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.whatsapp-contact-button {
+  /* width: 100%; */
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 700;
+  color: white !important;
+  background: linear-gradient(90deg, #4cbb17 0%, #3aa00a 100%);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(76, 187, 23, 0.4);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  text-align: center;
+  white-space: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.whatsapp-contact-button svg {
+  margin-right: 8px; /* Spacing for the WhatsApp icon */
+}
+
+.whatsapp-contact-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(76, 187, 23, 0.6);
+}
+
+/* -------------------------------------------------------------------------------- */
+/* --- RESPONSIVE ADJUSTMENTS --- */
+/* -------------------------------------------------------------------------------- */
+
+/* Desktop (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .detail-main-content {
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+  }
+
+  .title-and-duration-info {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .title-and-duration-info h2 {
+    font-size: 32px;
+  }
+
+  .overview-mobile-container {
+    display: none;
+  }
+
+  .overview-desktop-container {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .detail-secondary-column {
+    position: sticky;
+    top: 20px;
   }
 }
 
-/* 🔹 Default styles (Desktop first approach) */
+/* Tablet and Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+  /* Adjusted hero banner for smaller screens */
+  .hero-banner-container {
+    height: 30vh; /* Make it slightly shorter on mobile */
+    min-height: 180px;
+    margin-bottom: 0;
+  }
 
-/* Small phones (321px - 480px) */
-@media (max-width: 480px) {
-  /* styles */
-  .gridCard {
-    width: auto; /*  Adjust width for smaller screens */
-    height: auto; /* Let height adjust automatically */
-    flex-grow: 1;
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .detail-navigation-header {
+    justify-content: flex-start;
+    padding-bottom: 10px;
+  }
+  .back-to-list-button {
+    width: auto;
+  }
+
+  .title-and-duration-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title-and-duration-info h2 {
+    font-size: 24px;
+  }
+
+  .destination-card-grid {
+    width: 100%;
+  }
+  .detail-secondary-column {
+    position: static;
+    margin-top: 20px;
+  }
+  .contact-action-box {
+    box-shadow: none;
+    border: none;
+    padding: 0;
   }
 }
 
-/* Large phones (481px - 600px) */
-@media (max-width: 600px) {
-  /* styles */
-  .gridCard {
-    width: auto; /* ; Adjust width for smaller screens */
-    height: auto; /* Let height adjust automatically */
-    flex-grow: 1;
+/* Extra Large Screens (4K, 5K, 8K) - Ensure utilization of screen width */
+@media (min-width: 2000px) {
+  /* This ensures the list container uses 90% width even on massive screens */
+  .domestic-list-container {
+    max-width: 90% !important;
   }
+
+  /* The grid items will automatically adjust width based on the MUI Grid component logic (xs/sm/md/lg props in JS)
+     within this 90% container, allowing for more cards per row if the screen is wide enough. */
 }
 
-/* Small tablets (601px - 768px) */
-@media (max-width: 768px) {
-  /* styles */
-  .gridCard {
-    width: auto; /*  Adjust width for smaller screens */
-    height: auto; /* Let height adjust automatically */
-    flex-grow: 1;
-  }
-}
-
-/* Tablets (769px - 900px) */
-@media (max-width: 900px) {
-  /* styles */
-  .gridCard {
-    width: auto; /*  Adjust width for smaller screens */
-    height: auto; /* Let height adjust automatically */
-    flex-grow: 1;
-  }
-}
-
-/* Small laptops (901px - 1024px) */
-@media (max-width: 1024px) {
-  /* styles */
-  .gridCard {
-    width: max-content; /*  Adjust width for smaller screens */
-    height: auto; /* Let height adjust automatically */
-    flex-grow: 1;
-  }
-}
-
-/* Medium laptops (1025px - 1200px) */
-@media (max-width: 1200px) {
-  /* styles */
-  .gridCard {
-    width: max-content; /* Adjust width for smaller screens */
-    height: auto; /* Let height adjust automatically */
-    flex-grow: 1;
-  }
-}
-
-/* Standard desktops (1201px - 1366px) */
-@media (max-width: 1366px) {
-  /* styles */
-  .gridCard {
-    width: max-content; /* Adjust width for smaller screens */
-    height: auto; /* Let height adjust automatically */
-    flex-grow: 1;
-  }
-}
-
-/* Large desktops (1367px - 1440px) */
-@media (max-width: 1440px) {
-  /* styles */
-  .gridCard {
-    width: 90%; /* Adjust width for smaller screens */
-    height: auto; /* Let height adjust automatically */
-    flex-grow: 1;
-  }
-}
-
-/* Extra large desktops (1441px - 1600px) */
-@media (max-width: 1600px) {
-  /* styles */
-  .gridCard {
-    width: 90%; /* Adjust width for smaller screens */
-    height: auto; /* Let height adjust automatically */
-    flex-grow: 1;
-  }
-}
-
-/* Full HD screens (1601px - 1920px) */
-@media (max-width: 1920px) {
-  /* styles */
-  .gridCard {
-    width: 90%; /* Adjust width for smaller screens */
-    height: auto; /* Let height adjust automatically */
-    flex-grow: 1;
-  }
-}
-
-/* 2K screens (1921px - 2560px) */
-@media (max-width: 2560px) {
-  /* styles */
-  .gridCard {
-    width: 90%; /* Adjust width for smaller screens */
-    height: auto; /* Let height adjust automatically */
-    flex-grow: 1;
-  }
-}
-
-/* 4K Ultra HD screens (2561px - 3440px) */
-@media (max-width: 3440px) {
-  /* styles */
-  .gridCard {
-    width: 90%; /* Adjust width for smaller screens */
-    height: auto; /* Let height adjust automatically */
-    flex-grow: 1;
-  }
-}
-
-/* 5K & 8K screens (3441px and above) */
-@media (max-width: 3840px) {
-  /* styles */
-  .gridCard {
-    width: 90%; /* Adjust width for smaller screens */
-    height: auto; /* Let height adjust automatically */
-    flex-grow: 1;
+@media (min-width: 1200px) {
+  .css-5c1adp-MuiContainer-root {
+    max-width: 1400px;
   }
 }

@@ -1,491 +1,212 @@
 // src/data/destinationsData.js
-
-import chikmagalur from "./DomImages/chikmagalur2.png";
-import leh from "./DomImages/leh-ladakh.png";
 import kashmir from "./DomImages/kashmir.png";
-import lonavala from "./DomImages/lonavala.png";
-import nashik from "./DomImages/nashik.png";
-import golden from "./DomImages/Golden-tringle.png";
 import arunachal from "./DomImages/arunachal.png";
+import leh from "./DomImages/leh1.png";
+import lonavala from "./DomImages/lonavala.png";
 
+// This mock file provides the data required by International.js for both the list and detail views.
 const domestic = [
   {
     id: 1,
-    about: "About this tour",
-    title: "Chikmagalur",
-    Itinerary: "Itinerary",
-    description: "3 Days / 2 Nights",
-    details:
-      "A Chikmagalur tour focuses on exploring its picturesque natural beauty, including towering peaks like Mullayanagiri, numerous waterfalls such as Hebbe Falls, lush coffee plantations, and wildlife sanctuaries like Bhadra Wildlife Sanctuary. Popular activities include trekking to viewpoints, taking off-road jeep rides to waterfalls, visiting the Coffee Museum, and enjoying the scenic beauty of lakes and forests. Tours are often packaged for various durations, with 2- to 4-day trips being common, and can be combined with nearby destinations like Coorg or Mysore. ",
-    image: chikmagalur,
-    sections: {
-      day1: "BANGALORE TO CHIKMAGALUR",
-      day1summ: [
-        "Morning trip starts from Bangalore by 6.30 Am.",
-        "Pickup from hotel, Residence, Railway station, Bus stand or any other location as customer wish and drive to Kemmangundi about 273 Km.",
-        "On Arrival visit Kemmangundi and Kalathigiri falls or Manikhyadhara Falls.",
-        "Check in to the hotel and rest of the evening at leisure.",
-        "Overnight stay in Chikmagalur.",
-      ],
-      day2: "CHIKMAGALUR SIGHTSEEING",
-      day2summ: [
-        "After breakfast, visit Mullayanagiri which is the highest peak of Karnataka state located in Bababudangiri range.",
-        "The height of Mullayanagiri is 6330 ft (1,930 meters) (Vehicles are allowed till Seethalayanagiri and you will need to do a small trek to Mullayanagiri).",
-        "Kavikalgundi View Point, Dabbe Falls & Bababudangiri.Return to hotel by evening.",
-        "Overnight stay in Chikmagalur..",
-      ],
+    title: "Bali Retreat",
+    description: "7 Days 6 Nights of serene beaches and cultural immersion.",
+    image: kashmir,
+    overview:
+      "Experience the magic of Bali with its stunning rice paddies, ancient temples, and vibrant art scene. Perfect for relaxation and adventure.",
+    duration: "7 Days / 6 Nights",
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Denpasar",
+        details: [
+          "Check into Seminyak, relaxing evening.",
+          "Check into Seminyak, relaxing evening.",
+        ],
+      },
 
-      day3: "DEPART FROM CHIKMAGALUR - BELUR - HALEBID – BANGALORE",
-      day3summ: [
-        "After breakfast visit Belur & Halebid, which are two tiny but beautiful temple towns famous for Hoysala intricate carvings and fine architecture.",
-        "In the evening you will be transferred to your residence, Airport, Bus Terminus or Railway Station for your onward journey.",
-      ],
-      inclusions: [
-        "02 nights’ accommodation in Crystal Inn or Similar Hotel",
-        "Meals: Breakfast",
-        "Vehicle will be provided based on the itinerary from Bangalore by Sedan Car",
-        "All current taxes such as hotel taxes and transportation taxes are included",
-      ],
-      exclusions: [
-        "The customer should take care of personal expenses such as drinking water, soft drinks, laundry,porter chargers, incidentals, tips etc.",
-        "Entrance fees",
-      ],
-    },
+      {
+        day: 2,
+        title: "Ubud Culture Tour",
+        details: "Visit Tegalalang Rice Terraces and Monkey Forest.",
+      },
+      {
+        day: 3,
+        title: "Beach Day",
+        details: "Explore Kuta and Seminyak beaches.",
+      },
+      {
+        day: 4,
+        title: "Temple Visit",
+        details: "Tour Uluwatu Temple at sunset.",
+      },
+      {
+        day: 5,
+        title: "Water Sports",
+        details: "Snorkeling or diving near Nusa Dua.",
+      },
+      {
+        day: 6,
+        title: "Free Day / Shopping",
+        details: "Explore local markets and enjoy a spa session.",
+      },
+      {
+        day: 7,
+        title: "Departure",
+        details: "Transfer to Denpasar International Airport.",
+      },
+    ],
+    whatsappNumber: "919876543210",
   },
 
   {
     id: 2,
-    about: "About this tour",
-    title: "Leh Ladakh",
-    Itinerary: "Itinerary",
-    description: "7 Days / 6 Nights",
-    details:
-      "A Leh-Ladakh tour offers stunning Himalayan scenery, ancient monasteries, and high-altitude adventures, with the best time to visit being from late March to mid-August. Key attractions include Pangong Lake, Nubra Valley, and historical sites like Diskit Monastery and Thiksey Gompa. Tours typically involve a flight to Leh, followed by excursions to these areas, with common activities being motorcycle trips, exploring ancient monasteries, and enjoying the unique high-altitude landscapes",
-    image: leh,
-    sections: {
-      day1: "ARRIVAL AT LEH (3505 METERS/11567 FEET ABOVE SEA LEVEL)",
-      day1summ: [
-        "Experience a wonderful flight over the himalaya. On arrival, you will be received by M D Tours & Travels on arrival at airport leh - 3500m above sea level you will be transfer to hotel and check in. Half day at rest for acclimatization.",
-        " Evening drive to visit shanti stupa, a buddhist white-domed stupa on a hilltop in changspa, it was built in 1991 by japanese buddhist bhikshu, gyomyo nakamura and part of the peace pagoda mission.",
-        " Later visit leh palace. In the evening walk around local market. Dinner and overnight stay at the hotel in leh",
-      ],
-      day2: "SHAM VALLEY",
-      day2summ: [
-        "Day start with Hall of Fame, which was constructed by the Indian Army to commemorate the sacrifice of soldiers during Indo-Pak wars, Kali Mata Temple, followed by Spituk Gompa - an 11th century structure, next on the list of attractions is the majestic Gurudwara Patthar Sahib.",
-        " Nestled deep in the Himalayas, it was constructed by the Lamas of Leh in 1517 to honour the visit of Guru Nanak Dev - the founder of the Sikh faith. Drive another few km to witness the magic of Magnetic Hill that defies the law of gravity. It has been noticed that when a vehicle is parked on neutral gear on this metallic road, it seems to slide up and further.",
-        " Driving through a picturesque landscape, we reach the confluence of the Indus and Zanskar River. Proceed back to Hotel vai same route. Dinner and overnight stay at the Hotel in Leh",
-      ],
-      day3: " LEH TO NUBRA VIA KHARDUNGLA PASS -18,380 FT/5550 MTRS (125 KMS/05-06 HRS)",
-      day4: "NUBRA - EXCURSION TO TURTUK - NUBRA",
-      day5: "NUBRA TO PANGONG LAKE VIA SHAYOK (165 KMS/05 – 06 HRS)",
-      day6: "PANGONG TO LEH VIA CHANGLA PASS - 5486 MTRS. (160 KMS/05 – 06 HRS)",
-      day7: "DEPARTURE",
-      day3summ: [
-        "Today at morning drive to Nubra valley, driving over the highest motored pass in the world. The exciting journey through serpentine roads lead you to the Khardungla Pass at an awesome height of 5550 meters. We stop at the pass to admire and click some photographs of the fantastic view.",
-        "The valley is situated on an old caravan route at the confluence of the Shayok and the Nubra rivers. On the way visit the charming valley, of Deskit – the tiny capital of Nubra. We will visit the Deskit Gompa, perched on a rocky spur above the village, with a commanding view of the entire valley.",
-        " At Deskit Monastery you will visit 106-feet high, statue of Maitreya Buddha atop on the hill. The monastery has intriguing images of many deities.",
-        " From Deskit we will drive to Hunder past an area of sand dunes and get acquainted with the famous Bactrian camels, small population of shaggy double-humped animals, which in the old days, were used as pack animals on the Central Asian Trade routes are now used as riding animals in the high deserts.",
-        " We will ride the double hump camel at hunder on direct payment basis. In the evening we will drive back to the camp/hotel. Dinner and overnight in camp/hotel at Nubra.",
-      ],
-      day4summ: [
-        "One of the moist fascinating journeys in Ladakh this is a less popular destination recently opened for tourist,nif you have a thirst for a beautiful location this is the place. En-route spectacular mountain ranges and Villages like.",
-        "This region is controlled mainly by the Ladakh Scouts a rear department of the India Army. A border village that was recaptured by the Indian Army in 1971.",
-        "Locals have relatives across the border (Line of Control) and depend mainly on farming of vegetables, apricot besides providing mules and porters. Baltistan a beautiful village with charming people 'On the night of December 13, 1971, the people of this village went to sleep in Pakistan.",
-        "The next morning, they woke up in India. We are in Turtuk, listening to a villager recount the history of this remote northwest corner of Ladakh, which until that night was part of Baltistan in PoK. A full day rough excursion and evening back to Nubra Valley. Overnight in camp/hotel at Nubra.",
-      ],
+    title: "Dubai",
+    description: "7 Days 6 Nights of serene beaches and cultural immersion.",
+    image: arunachal,
+    overview:
+      "Experience the magic of Bali with its stunning rice paddies, ancient temples, and vibrant art scene. Perfect for relaxation and adventure.",
+    duration: "7 Days / 6 Nights",
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Denpasar",
+        details: [
+          "Check into Seminyak, relaxing evening.",
+          "Check into Seminyak, relaxing evening.",
+        ],
+      },
 
-      day5summ: [
-        "After breakfast at camp/hotel we drive to next destination Pangong Lake (situated at 14, 500 ft above sea level) via Shayok and onto Tang Tse and Spangmik (Pangong). It’s a short cut and it's a beautiful route. ",
-        "The road follows the Shayok river, and climbs up a mountain before finally descending into Shayok village. It takes less than an hour to reach Shayok, and you will be delighted at the sight of the rather big village surrounded by barren mountains, the entire setting being very picturesque. ",
-        "Afternoon we reach at Pangong Lake and enjoy your day at Pangong Lake. Dinner and overnight stay in camp.",
-      ],
-      day6summ: [
-        "Get up early morning to witness the sunrise view at the lake. Enjoy your breakfast and drive back to Leh via Changla Pass 5486 Mtrs. Arrive Leh and check in at the hotel. Evening free for shopping or leisure. ",
-        "Dinner & overnight stay at Hotel",
-      ],
-      day7summ: [
-        "With a heavy heart, your journey to mother nature “Leh”, ends here. After breakfast, check out from the hotel and proceed to the airport for your onward journey.",
-        "Depart with memories galore!",
-      ],
-      inclusions: [
-        "Delhi -Leh - Delhi return flight in economy class with 15 + 7 Kg. baggage (Mentioned Above)",
-        "03 Nights’ accommodation in Leh on double sharing basis as per Itinerary",
-        "02 Nights’ accommodation in Nubra on double sharing basis as per Itinerary",
-        "01 Nights’ accommodation in Pangong on double sharing basis as per Itinerary",
-        "Meal Plan MPAI (Breakfast and dinner inclusive)",
-        "Inner line permit.",
-        "NAC Innova (01 cab upto 04 - 05 pax, 02 cab 06 – 10 pax and 01 NAC Tempo Traveller for 12 pax) for all the sightseeing as per the itinerary.",
-        "Arrival/departure transfer and all land transfers as per the itinerary",
-        "Pickup and Drop from Leh Airport",
-        "Driver allowance/toll/parking/road tax/fuel charge.",
-      ],
-      exclusions: [
-        "Lunch",
-        "Government Service Tax (GST) @ 5% On total bill",
-        "All entry fees at sightseeing spots.",
-        "Any additional meals other than mentioned in the ‘inclusive’ column.",
-        "Travel insurances.",
-        "Monuments entrances fee mentioned in the itinerary.",
-        "Rafting charges, Camel Safari Charges, Guide charges, if any.",
-        "Items of personal nature like porterage, tips, laundry, telephone calls, mineral water etc.",
-        "Expenses caused by factors beyond our control like rail and flight delays, roadblocks, political disturbances etc.",
-        "Any item not specifically mentioned in Inclusions column.",
-      ],
-    },
+      {
+        day: 2,
+        title: "Ubud Culture Tour",
+        details: "Visit Tegalalang Rice Terraces and Monkey Forest.",
+      },
+      {
+        day: 3,
+        title: "Beach Day",
+        details: "Explore Kuta and Seminyak beaches.",
+      },
+      {
+        day: 4,
+        title: "Temple Visit",
+        details: "Tour Uluwatu Temple at sunset.",
+      },
+      {
+        day: 5,
+        title: "Water Sports",
+        details: "Snorkeling or diving near Nusa Dua.",
+      },
+      {
+        day: 6,
+        title: "Free Day / Shopping",
+        details: "Explore local markets and enjoy a spa session.",
+      },
+      {
+        day: 7,
+        title: "Departure",
+        details: "Transfer to Denpasar International Airport.",
+      },
+    ],
   },
-
   {
     id: 3,
-    about: "About this tour",
-    title: "Kashmir",
-    Itinerary: "Itinerary",
-    description: "6 Days / 5 Nights",
-    details:
-      "A Kashmir tour involves visiting key destinations like Srinagar (Dal Lake, Mughal Gardens), Gulmarg (skiing, Gondola), and Pahalgam (Aru, Betaab Valley), with Sonamarg and Gurez Valley offering other attractions. Key activities include shikara rides on Dal Lake, exploring Mughal Gardens, experiencing adventure sports like skiing and paragliding, and enjoying the local cuisine and culture. The best time to visit is generally from March to August for pleasant weather and full bloom, though winter offers snow sports. Most Kashmir tours are available as pre-booked packages from various travel agencies, with durations typically ranging from 4 to 7 days or more, depending on your interests.  ",
-    image: kashmir,
-    sections: {
-      day1: "ARRIVAL + SHIKARA RIDE",
-      day1summ: [
-        "Meet our representative at Srinagar airport, transfer to Srinagar Hotel.",
-        "In the evening, Shikara ride in the world famous Dal lake.",
-        "Overnightstay at Srinagar.",
-        "Meals : Dinner",
-      ],
-      day2: "SRINAGAR –GULMARG (54 KMS)",
-      day2summ: [
-        "After breakfast, transfer to Gulmarg via Tangmarg",
-        "En-route Apple Orchards, Cherry Orchards (In Summer Time). In Gulmarg visit Khilanmarg and",
-        'Take a ride in the world\'s highest cable car "Gondola" or enjoy your day by playing golf in the world’s highest golf course. Overnight stay at Gulmarg.',
-      ],
-      day3: "GULMARG – PAHALGAM (148 KMS ON WAY)",
-      day3summ: [
-        "After breakfast, transfer to Pahalgam",
-        "Enroute visit Saffron Fields.",
-        "In Pahalgam you can visit: - Aru , Betaab valley (at your own cost).",
-        "Overnightstay at a hotel in Pahalgam.",
-      ],
-      day4: "PAHALGAM TO SRINAGAR + SS OF MUGHAL GARDEN (119 KMS ON WAY)",
-      day4summ: [
-        "After breakfast, transfer to srinagar, check in at the hotel.",
-        "Afternoon, leave for local sightseeing of Srinagar City. Visit: - Mughal gardens: - CheshmaShahi (Mughal Spring), Nishat (The Garden of Bliss), Shalimar (The Abode of Love).",
-        "Overnightstay at hotel in Srinagar.",
-      ],
-      day5: "SRINAGAR – SONMARG – SRINAGAR (89 KMS ON WAY)",
-      day5summ: [
-        "After breakfast, transfer to Sonmarg for a daytrip.",
-        "Enroute see Hazratbal Shrine, Gagangir Tourist Village. The drive from Srinagar to Sonmarg is very beautiful as you will pass through some towns and villages, at many places you can enjoy the view of paddy fields with rivers flowing on one side. In Sonmarg you can visit Thajwas Glacier which is around 4 Kms from Sonmarg, a local taxi has to be hired for it (at your own cost ). The name Sonmarg is derived from two Kashmiri words “Son” & “Marg” which mean “Gold” & “Meadow”, when put together it means “Meadow of Gold ''. Return to Srinagar in the evening after enjoying your day.",
-        "Overnightstay at Srinagar.",
-      ],
-      day6: "DEPARTURE",
-      day6summ: [
-        "After breakfast, transfer to Srinagar airport, with the memories of your trip organized by M D TOURS & TRAVELS",
-      ],
-      inclusions: [
-        "01 night in in Pahalgam",
-        "01 night in In Gulmarg",
-        "03 nights in Srinagar",
-        "Meal Plan on (Breakfast + Dinner) basis- Lunch Not Included",
-        "All Sightseeing & transfers by NON AC Vehicle",
-        "01 hour shikara ride",
-        "Return Flight Fares Inclusive of Taxes",
-        "Toll, tax, driver allowance for all trips",
-      ],
-      exclusions: [
-        "Lunch",
-        "Entrance fees / Tickets to monuments / Park / Cable cars, etc.",
-        "Any other expenses not mentioned under the inclusions.",
-        "Garden entrance fees and Guide charges, where ever applicable.",
-        "Trip to Aru, Chandanwari&Betaab Valley in Pahalgam",
-        "Gondola ride in Gulmarg – Have to book online before 10 days minimum.",
-        "Thajiwas Glacier & Snow Point in Sonamarg",
-        "Garden Entrance fees and guide charges, where ever applicable.",
-        "Snow Jeep from Tangmarg to Gulmarg & back, (Applicable from Nov – February Month)",
-        "Item of personal nature viz, tips, laundry, room service, telephone, alcoholic or non-alcoholic beverages, room heaters, boat rides, pony / horse rides, safaris, rafting, skiing, skating, cable car / ropeway rides, helicopter rides, additionalsightseeing tours excursions not included in the itinerary, still or video camera fees etc.",
-        "Any kind of insurance, Air, Train or Bus fare from / to your originating city of stay, unless specified",
-        "Lunch and personal expenses like entry ticket any, telephone laundry, or anything which is not mentioned above.",
-        "Any Tax & Government Service tax (5%)",
-        "Any Kind of Personal Expenses or Optional Tours/ Extra Meals Ordered",
-        "Anything not specifically mentioned under the head “Prices included”. The services of vehicle are not included on leisure days & after finishing the sightseeing tour as per the itinerary",
-        "Additional costs due to flight cancellation, road blocks etc.",
-        "Medical & Travel insurance",
-      ],
-    },
+    title: "Dubai",
+    description: "7 Days 6 Nights of serene beaches and cultural immersion.",
+    image: leh,
+    overview:
+      "Experience the magic of Bali with its stunning rice paddies, ancient temples, and vibrant art scene. Perfect for relaxation and adventure.",
+    duration: "7 Days / 6 Nights",
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Denpasar",
+        details: [
+          "Check into Seminyak, relaxing evening.",
+          "Check into Seminyak, relaxing evening.",
+        ],
+      },
+
+      {
+        day: 2,
+        title: "Ubud Culture Tour",
+        details: "Visit Tegalalang Rice Terraces and Monkey Forest.",
+      },
+      {
+        day: 3,
+        title: "Beach Day",
+        details: "Explore Kuta and Seminyak beaches.",
+      },
+      {
+        day: 4,
+        title: "Temple Visit",
+        details: "Tour Uluwatu Temple at sunset.",
+      },
+      {
+        day: 5,
+        title: "Water Sports",
+        details: "Snorkeling or diving near Nusa Dua.",
+      },
+      {
+        day: 6,
+        title: "Free Day / Shopping",
+        details: "Explore local markets and enjoy a spa session.",
+      },
+      {
+        day: 7,
+        title: "Departure",
+        details: "Transfer to Denpasar International Airport.",
+      },
+    ],
   },
   {
     id: 4,
-    about: "About this tour",
-    title: "Mahabaleshwar & Lonavala",
-    Itinerary: "Itinerary",
-    description: "5 Days / 4 Nights",
-    details:
-      "A tour combining Mahabaleshwar and Lonavala offers a blend of serene hill station beauty and adventure. Mahabaleshwar is known for its historical sites like forts and viewpoints, providing a tranquil experience with cool climates. Lonavala, located on the way from Pune to Mahabaleshwar, focuses on nature, waterfalls, trekking, and adventure activities like trekking and rappelling. A common itinerary combines these for a complete hill station experience, with a typical tour duration of 3-4 days.",
+    title: "Vietnam",
+    description: "7 Days 6 Nights of serene beaches and cultural immersion.",
     image: lonavala,
-    sections: {
-      day1: "ARRIVAL IN PUNE AIRPORT",
-      day1summ: [
-        "Meet our representative at Pune airport, transfer to Mahabaleshwar",
-        "On Arrival to Mahabaleshwar and proceed to check-in at Hotel.",
-        "Visit iconic viewpoints like Arthur's Seat, Kate's Point, and Elephant's Head Point for stunning vistas",
-        "Overnight stay in Mahabaleshwar.",
-      ],
-      day2: "MAHABALESHWAR SIGHTSEEING",
-      day2summ: [
-        "After your Breakfast, proceed to Mahabaleshwar Sightseeing",
-        "Wilson Point, Mahabaleshwar Temple, Elphinstone Point, Pratapgad Fort, Lingmala Falls, Helen’s Point.",
-        "Back to Hotel for Overnight stay.",
-      ],
-      day3: "MAHABALESHWAR TO LONAVALA ",
-      day3summ: [
-        "Today after your Breakfast, check-out from hotel and drive to Lonavala.",
-        "On arrival proceed to visit - Visit Redwood Park & Shivaji Udyan. The Valvan Dam and Tungarli Lake is a must visit place for you. Rajmachi Point is a historical point located at the Western Ghats which is the most popular destination for the hikers and trekkers.",
-        "Later check-in to hotel for Overnight stay.",
-      ],
-      day4: "LONAVALA SIGHTSEEING",
-      day4summ: [
-        "Today after breakfast proceed for half day Lonavala Sightseeing.",
-        "You can explore Tiger’s Leap and Amruntanjan Point. The Bhushi Lake and Khandala Lake are the most visited place of Khandala.",
-      ],
-      day5: "PUNE - DEPARTURE",
-      day5summ: [
-        "Today after breakfast, you will be transferred back to Pune airport for your onward journey.",
-        "Return home with beautiful memories of Mumbai tour package which will be with you for life long.",
-      ],
-      inclusions: [
-        "02 Night’s Accommodation in Mahabaleshwar",
-        "02 Night’s Accommodation in Lonavala",
-        "Daily Breakfast",
-        "Vehicle for 05 Days",
-        "Return flight fare",
-        "AC Not applicable in Hilly areas",
-        "Inclusive of all taxes, (Parking, Toll, Fuel Expenses & Driver’s Bata)",
-        "All sightseeing covered as per the itinerary.",
-      ],
-      exclusions: [
-        "Lunch & Dinner not included",
-        "Any Monument Entrance or any activity Fee",
-        "Expenses of personal nature like drinks, personal insurance, tips and telephone calls.",
-        "Any additional expenses due to unforeseen problems like natural disaster, war or strikes, cancellation or misconnection of flight or last minute change of timings etc.",
-        'Any other service, which has not been specified as "included".',
-      ],
-    },
-  },
-  {
-    id: 5,
-    about: "About this tour",
-    title: "Nashik & Lonavala",
-    Itinerary: "Itinerary",
-    description: "5 Days / 4 Nights",
-    details:
-      "A Nashik and Lonavala tour is a journey through two distinct regions of Maharashtra, India, combining spirituality and nature. Nashik is a major pilgrimage site, famous for the Trimbakeshwar Temple and the Godavari River, while Lonavala is a popular hill station known for its forts like Lohagad and Visapur, lakes such as Pawna Lake, and adventure activities at Della Adventure Park. The tour typically involves exploring temples in Nashik and then heading to Lonavala for its natural beauty and recreational options. ",
-    image: nashik,
-    sections: {
-      day1: "ARRIVAL IN PUNE + NASHIK",
-      day1summ: [
-        "Meet our representative at Pune airport, transfer to Nashik.",
-        "On Arrival to Nashik proceed to check-in at Hotel.",
-        "Later visit Shree Trimbakeshwar Jyotirling Mandir. Trimbakeshwar Jyotirlinga is one of the 12 jyotirlingas in India. The jyotirlinga has three faces representing the gods - Shiva, Vishnu and Brahma.",
-        "Overnight stay in Nashik.",
-      ],
-      day2: "NASHIK TO LONAVALA",
-      day2summ: [
-        "Today after your Breakfast, check-out from hotel and drive to Lonavala.",
-        "On arrival check-in to Lonavala Hotel & Overnight stay.",
-      ],
-      day3: "LONAVALA SIGHTSEEING",
-      day3summ: [
-        "Today after your breakfast, you can explore many breathtaking places",
-        "Visit Redwood Park & Shivaji Udyan. The Valvan Dam and Tungarli Lake is a must visit place for you. Rajmachi Point is a historical point located at the Western Ghats which is the most popular destination for the hikers and trekkers.",
-        "Overnight stay in Lonavala.",
-      ],
-      day4: "LONAVALA SIGHTSEEING",
-      day4summ: [
-        "Today after breakfast proceed for half day Lonavala Sightseeing.",
-        "You can explore Tiger’s Leap and Amruntanjan Point. The Bhushi Lake and Khandala Lake are the most visited place of Khandala.",
-      ],
-      day5: "PUNE - DEPARTURE",
-      day5summ: [
-        "Today after breakfast, you will be transferred back to Pune airport for your onward journey.",
-        "Return home with beautiful memories of Mumbai tour package which will be with you for life long.",
-      ],
-      inclusions: [
-        "01 Night Accommodation in Nashik",
-        "03 Night Accommodation in Lonavala",
-        "Daily Breakfast",
-        "Vehicle for 05 Days",
-        "Return flight fare",
-        "AC Not applicable in Hilly areas",
-        "Inclusive of all taxes, (Parking, Toll, Fuel Expenses & Driver’s Bata)",
-        "All sightseeing covered as per the itinerary.",
-      ],
-      exclusions: [
-        "Lunch & Dinner not included",
-        "Any Monument Entrance or any activity Fee",
-        "Expenses of personal nature like drinks, personal insurance, tips and telephone calls.",
-        "Any additional expenses due to unforeseen problems like natural disaster, war or strikes, cancellation or misconnection of flight or last minute change of timings etc.",
-        'Any other service, which has not been specified as "included".',
-      ],
-    },
-  },
-  {
-    id: 6,
-    about: "About this tour",
-    title: "Golden Triangle",
-    Itinerary: "Itinerary",
-    description: "6 Days / 5 Nights.         Jaipur/Agra/Delhi",
-    details:
-      "The Golden Triangle is a well-known tourist circuit in Northern India that connects three iconic cities: Delhi, Agra, and Jaipur. The tour typically starts in Delhi, moves to Agra to see the Taj Mahal, then travels west to Jaipur, often returning to Delhi. It's a popular way for tourists to experience a blend of modern India in Delhi, the historical grandeur of Agra, and the royal heritage of Jaipur, offering a glimpse into the country's rich history and culture",
-    image: golden,
-    sections: {
-      day1: "ARRIVAL JAIPUR AND JAIPUR SIGHTSEEING",
-      day1summ: [
-        "Arrive in Jaipur and proceed to Jaipur Local Sightseeing – Visit Birla Temple, Birla Auditorium and Albert Hall",
-        "Lunch at outside restaurant (Own expenses)",
-        "Later proceed to Visit Local Market and Nahargarh Fort (sunset view over city)",
-        "Return back to hotel and Overnight Stay in Jaipur",
-      ],
-      day2: "JAIPUR LOCAL SIGHTSEEING",
-      day2summ: [
-        "Breakfast at Hotel",
-        "Proceed to excursion to Amber Fort and enjoy the elephant ride (Direct Pay)- See the largest cannon on wheels in the world, and old cannon foundry at Jaigarh.",
-        "Visit to the KanakVrindavan Temple in the valley of flowers.",
-        "Drive through the Johari Bazaar or the old jeweler's market to HawaMahal (Palace of Winds).",
-        "Visit the various museums inside the City Palace and the ancient observatory and JantarMantar.",
-        "Evening free for your independent activities and Return back to hotel and Overnight in Jaipur",
-      ],
-      day3: "JAIPUR - FATEHPUR SIKRI - AGRA",
-      day3summ: [
-        "After breakfast, check-out from hotel and proceed to Agra. En-route visit Fatehpur sikri, Buland darwaza (world largest Entrance gate).",
-        "On arrival Agra. Check-in to hotel later visit The symbol of Love, the world famous monument Taj Mahal - the most precious gift of love built by Emperor Shah Jahan for his loving wife Mumtaz",
-        "Overnight stay at Agra.",
-      ],
-      day4: "AGRA TO DELHI (237 KM / 04 HR)",
-      day4summ: [
-        "After breakfast check-out from hotel and proceed to Delhi.",
-        "On arrival Delhi, proceed for local sightseeing, Chattapur Temple, Qutab Minar, Lotus Temple, Humayun Tomb, Parliament House, Rashtrapati Bhawan, India Gate. Later check-in to hotel",
-        "Overnight stay at Delhi.",
-      ],
-      day5: "DELHI SIGHTSEEING",
-      day5summ: [
-        "After Breakfast, drop at Airport.",
-        "Return home with sweet memories of your tour organized by M D TOURS AND TRAVELS.",
-      ],
-      day6: "DEPARTURE",
-      day6summ: [
-        "After breakfast, transfer to Srinagar airport, with the memories of your trip organized by M D TOURS & TRAVELS",
-      ],
-      inclusions: [
-        "02 Night’s Accommodation in Delhi",
-        "01 Night Accommodation in Agra",
-        "02 Night’s Accommodation in Jaipur",
-        "Meals on Breakfast Basis",
-        "All the Tours and Transfers on Private Basis",
-        "Sightseeing as per the Itinerary",
-        "GST",
-      ],
-      exclusions: [
-        "Entrance Fees are not Included",
-        "Return Flight Fares Inclusive of Taxes",
-        "Lunch and Dinner are not Included",
-        "Guide Charges",
-        "Personal Expenses other than mentioned in the Inclusions",
-      ],
-    },
-  },
-  {
-    id: 7,
-    about: "About this tour",
-    title: "Assam & Arunachal Pradesh",
-    Itinerary: "Itinerary",
-    description: "8 Days / 7 Nights",
-    details:
-      "An Assam & Arunachal Pradesh tour offers wildlife in Assam's Kaziranga National Park and cultural experiences in Guwahati, then transitions to Arunachal's stunning mountain landscapes, including Tawang Monastery, Sela Pass, and Dirang Valley, before concluding in Dibrugarh. The best time to visit is from November to March, with Guwahati as the common starting point. Popular activities include elephant safaris, boat rides, trekking, and cultural immersion in local villages and ancient monasteries. ",
-    image: arunachal,
-    sections: {
-      day1: "GUWAHATI TO KAZIRANGA (200KM/06HRS)",
-      day1summ: [
-        "Upon your arrival, meet our representative at Airport & start your journey to kaziranga",
-        "Drive to Kaziranga & check in to the hotel.",
-        "Rest of the day is free at leisure.",
-        "Overnight stay at Kaziranga.",
-      ],
-      day2: "KAZIRANGA NATIONAL PARK",
-      day2summ: [
-        "After an early wake up, you will be taken to the riding point in the Central Range (Kohora) for an Elephant Ride.",
-        "After the ride return back to the Resort.",
-        "After lunch, evening drive to the Central Range of the park for a jeep safari.",
-        "Get transferred to Bhalukpong",
-        "Overnight stay in Bhalukpong",
-      ],
-      day3: "BHALUKPONG TO DIRANG (140KM/4HRS)",
-      day3summ: [
-        "After an early breakfast, drive to Dirang.",
-        "On the way, visit Tipi Orchidarium situated on the banks of the river Bharali, a place of over 500 orchids, on display there are some rare species of orchid.",
-        "Take a break to visit Nag Temple.",
-        "Continue your drive and not forget to keep your cameras handy as you cross beautiful waterfalls and get some spectacular views.",
-        "Dirang is also famous for hot water springs where people take baths to cure skin ailments.",
-        "Visit the Dirang Dzong and a Monpa village.",
-        "Check into the hotel.",
-        "Overnight stay at Dirang.",
-      ],
-      day4: "DIRANG TO TAWANG (150KM/5HRS)",
-      day4summ: [
-        "After Breakfast, check out from hotel and drive to Tawang.",
-        "Enroute witness the snow capped Sela Pass at 14000 ft.",
-        "En-route also visit Nuranang waterfalls and Jaswant Garh War Memorial.",
-        "Tawang is an ideal place to go for walks especially around the villages spread on the hill side below the main town.",
-        "It has mostly been remembered in times of war (1962 Indo Chinese war).",
-        "Overnight stay at Tawang.",
-      ],
+    overview:
+      "Experience the magic of Bali with its stunning rice paddies, ancient temples, and vibrant art scene. Perfect for relaxation and adventure.",
+    duration: "7 Days / 6 Nights",
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Denpasar",
+        details: [
+          "Check into Seminyak, relaxing evening.",
+          "Check into Seminyak, relaxing evening.",
+        ],
+      },
 
-      day5: "TAWANG SIGHTSEEING",
-      day5summ: [
-        "After breakfast, start your day with breathtaking view of Shonga-tser Lake (Madhuri Lake), surrounded by snow-capped mountains and the valley offer a spectacular view.",
-        "Next move on to Bum La Pass, about 37 km away from Tawang, which is the indo-china border that lies at 15,200 ft above sea level.",
-        "On your way back stop by heart lake, PTSO lake, Naghula lake, this will surely make your day (Please note that sightseeing of these places would require you to hire a local taxi and hence it is optional. Also, Bum La Pass visit is subjected to road clearance by Indian Army).",
-        "Return from there as early as possible to cover the rest of sightseeing in Tawang.",
-        "In the evening, if time permits, enjoy the light and sound show in Tawang War Memorial",
-        "After a wonderful day, relaxing stay for the night in Tawang.",
-      ],
-
-      day6: "TAWANG TO BOMDILA (180KM/6HRS)",
-      day6summ: [
-        "After breakfast, visit the beautiful Tawang Monastery, the birthplace of Sixth Dalai Lama.",
-        "Then drive straight to Bomdila.",
-        "After reaching there, proceed for sightseeing of the local places in Bomdila.",
-        "The Buddhist Monasteries, Craftcenter are some places you would like to visit.",
-        "In the evening you'll enjoy local market.",
-        "Afterwards return to your hotel.",
-        "Overnight stay in Bomdila.",
-      ],
-      day7: "BOMDILA TO GUWAHATI (300KM/08HRS)",
-      day7summ: [
-        "After breakfast, check-out from hotel and drive to Guwahati",
-        "Rest of the day for leisure",
-        "Overnight stay in Guwahati.",
-      ],
-      day8: "GUWAHATI LOCAL SIGHTSEEING + DEPARTURE",
-      day8summ: [
-        "After Breakfast Check-out from Hotel & proceed for local sightseeing.",
-        "Visit The Kamakhya Temple at Nilachal hills in Guwahati, Assam is one of the oldest and most revered centres of Tantric practices.",
-        "Umananda Devaloi is a Shiva temple located at the Umananda Island in the middle of river Brahmaputra & Bhimasankar Dham Jyotirlinga Temple.",
-        "Get transfer to Guwahati Airport to board your flight to Bangalore. With the wonderful memories of your trip organized by M D TOURS AND TRAVELS.",
-      ],
-      inclusions: [
-        "02 nights' accommodation in Assam",
-        "05 nights' accommodation in Arunachal Pradesh",
-        "Meal Plan on (Breakfast + Dinner) basis",
-        "All Sightseeing & transfers as per the itinerary",
-        "Return Flight Fares Inclusive of Taxes",
-        "Toll, tax, driver allowance for all trips",
-        "GST 5%",
-      ],
-      exclusions: [
-        "Lunch",
-        "Entrance fees / Safari Charges / Tickets to monuments / Park / Cable cars, etc.",
-        "Any other expenses not mentioned under the inclusions.",
-        "Garden entrance fees and Guide charges, where ever applicable.",
-      ],
-    },
+      {
+        day: 2,
+        title: "Ubud Culture Tour",
+        details: "Visit Tegalalang Rice Terraces and Monkey Forest.",
+      },
+      {
+        day: 3,
+        title: "Beach Day",
+        details: "Explore Kuta and Seminyak beaches.",
+      },
+      {
+        day: 4,
+        title: "Temple Visit",
+        details: "Tour Uluwatu Temple at sunset.",
+      },
+      {
+        day: 5,
+        title: "Water Sports",
+        details: "Snorkeling or diving near Nusa Dua.",
+      },
+      {
+        day: 6,
+        title: "Free Day / Shopping",
+        details: "Explore local markets and enjoy a spa session.",
+      },
+      {
+        day: 7,
+        title: "Departure",
+        details: "Transfer to Denpasar International Airport.",
+      },
+    ],
   },
 ];
 

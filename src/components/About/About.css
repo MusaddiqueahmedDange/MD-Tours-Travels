@@ -1,10 +1,18 @@
 /* Filename: styles.css */
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* --- CSS WRAPPER CLASS --- */
+.about-page-wrapper {
+  /* This wrapper class isolates all the following CSS rules */
 
-.about {
-  /* font-family: sans-serif; */
-  margin: 20px;
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+  .about {
+    /* font-family: sans-serif; */
+    margin: 0; /* Remove fixed margin for full-width capability */
+    padding: 20px; /* Add padding inside for content spacing */
+    box-sizing: border-box; /* Include padding in element's total width/height */
+    width: 100%; /* Ensure full width on all screens */
+  }
 
   .whoWeR {
     line-height: 30px;
@@ -12,6 +20,13 @@
     font-size: 17px;
     color: #595959;
     text-align: justify;
+    max-width: 1200px;
+    margin: 0 auto 40px auto; /* Center the text content */
+    padding: 0 10px;
+  }
+
+  .whoWeR h2 {
+    font-family: "Poppins", sans-serif;
   }
 
   /* Meet the team section */
@@ -37,10 +52,13 @@
   }
 
   .team-grid {
-    display: flex;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    display: grid; /* Use grid for better control over team cards */
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(250px, 1fr)
+    ); /* Adjusted min-width for better fit */
     gap: 20px;
-    justify-self: center;
+    justify-content: center;
   }
 
   .team-card {
@@ -58,11 +76,12 @@
   }
 
   .team-image {
-    width: 400px;
-    height: 500px;
-    /* border-radius: 50%; */
+    width: 100%; /* Fluid width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 500px; /* Limit image height */
     object-fit: cover;
-    /* margin-bottom: 15px; */
+    margin-bottom: 15px; /* Added spacing */
+    border-radius: 8px; /* Added slight radius to fit card design */
   }
 
   .team-name {
@@ -91,6 +110,9 @@
     .team-card {
       padding: 20px;
     }
+    .team-grid {
+      grid-template-columns: 1fr; /* Single column on small screens */
+    }
   }
 
   @media (max-width: 480px) {
@@ -98,15 +120,12 @@
       font-size: 1.5rem;
       font-family: "Poppins", sans-serif;
     }
-    .team-grid {
-      grid-template-columns: 1fr;
-    }
     .team-card {
       padding: 18px;
     }
   }
 
-  /* 🌙 Modal Styles */
+  /* 🌙 Modal Styles - unchanged and kept inside the wrapper */
   .modal-overlay {
     position: fixed;
     top: 0;
@@ -182,9 +201,9 @@
 
   /* Airline partners section css */
   .partners-section {
-    padding: 30px 20px;
+    padding: 30px 0; /* Adjusted padding to 0 side to allow carousel full width */
     text-align: center;
-    /* background: #f9f9f9; */
+    max-width: 100%; /* Ensure full width */
   }
 
   .partners-heading {
@@ -201,13 +220,21 @@
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 20px; /* Added inner padding */
     font-family: "Poppins", sans-serif;
   }
 
   .carousel-container {
-    max-width: 1000px;
+    max-width: 1200px; /* Increased max-width */
     margin: 0 auto;
     position: relative;
+    padding: 0 20px; /* Ensure space for arrows */
+  }
+
+  /* slick slider wrapper - ensures responsiveness */
+  .slick-slider {
+    width: 100%;
+    overflow: hidden;
   }
 
   .partner-slide {
@@ -221,9 +248,10 @@
     background: #fff;
     border-radius: 12px;
     padding: 20px;
-    margin: 10px; /* ✅ Added margin around each card */
+    margin: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 180px;
+    /* width: 180px;  - Removed fixed width to allow flex/slick to control size */
+    width: 90%; /* Let slick-carousel manage the width, but max-out at 90% of its slot */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
   }
@@ -247,14 +275,7 @@
     font-family: "Poppins", sans-serif;
   }
 
-  /* 📱 Responsive Styles */
-  @media (max-width: 1024px) {
-    .partner-card {
-      width: 160px;
-      margin: 12px;
-    }
-  }
-
+  /* 📱 Responsive Styles for Partners/Hotels */
   @media (max-width: 768px) {
     .partners-heading {
       font-size: 1.7rem;
@@ -265,9 +286,11 @@
       font-family: "Poppins", sans-serif;
     }
     .partner-card {
-      width: 150px;
-      margin: 10px;
       padding: 18px;
+      margin: 10px 5px; /* Tighter margin for smaller screens */
+    }
+    .partner-logo {
+      height: 70px; /* Smaller logos on mobile */
     }
   }
 
@@ -277,21 +300,22 @@
       font-family: "Poppins", sans-serif;
     }
     .partner-card {
-      width: 130px;
-      margin: 8px;
       padding: 15px;
     }
     .arrow {
       display: none; /* Hide arrows on small mobile */
     }
+    .carousel-container {
+      padding: 0 10px;
+    }
   }
 
-  /* hotel partners section */
+  /* hotel partners section - mostly a copy of partners-section */
 
   .hotels-section {
-    padding: 30px 20px;
+    padding: 30px 0;
     text-align: center;
-    /* background: #fff; */
+    max-width: 100%;
   }
 
   .hotels-heading {
@@ -309,13 +333,8 @@
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 20px;
     font-family: "Poppins", sans-serif;
-  }
-
-  .carousel-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    position: relative;
   }
 
   .hotel-slide {
@@ -329,7 +348,8 @@
     border-radius: 12px;
     padding: 20px;
     margin: 10px;
-    width: 180px;
+    /* width: 180px; - Removed fixed width */
+    width: 90%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
@@ -348,21 +368,7 @@
     margin-bottom: 10px;
   }
 
-  .hotel-name {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #333;
-    font-family: "Poppins", sans-serif;
-  }
-
-  /* Responsive */
-  @media (max-width: 1024px) {
-    .hotel-card {
-      width: 160px;
-      margin: 12px;
-    }
-  }
-
+  /* Responsive for Hotels */
   @media (max-width: 768px) {
     .hotels-heading {
       font-size: 1.7rem;
@@ -373,9 +379,11 @@
       font-family: "Poppins", sans-serif;
     }
     .hotel-card {
-      width: 150px;
-      margin: 10px;
       padding: 18px;
+      margin: 10px 5px;
+    }
+    .hotel-logo {
+      height: 70px;
     }
   }
 
@@ -385,16 +393,15 @@
       font-family: "Poppins", sans-serif;
     }
     .hotel-card {
-      width: 130px;
-      margin: 8px;
       padding: 15px;
     }
   }
 
   /* Reviews section */
   .reviews-section {
-    padding: 30px 20px;
+    padding: 30px 0;
     text-align: center;
+    max-width: 100%;
   }
 
   .reviews-heading {
@@ -412,31 +419,41 @@
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 20px;
     font-family: "Poppins", sans-serif;
   }
 
   .reviews-carousel {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     position: relative;
+    padding: 0 20px; /* Ensure space for arrows */
   }
 
-  /* Responsive review card */
+  /* Responsive review card - Mobile friendly adjustments */
+  .review-slide {
+    display: flex !important;
+    justify-content: center;
+  }
+
   .review-card {
     background: #fff;
     border-radius: 16px;
     padding: 25px;
-    margin: 15px;
+    margin: 15px; /* Margin for spacing between cards */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-    width: 90%; /* 🔥 flexible, adjusts to screen */
-    max-width: 360px; /* keeps card beautiful on large screens */
-    min-height: 280px; /* prevents shrinking */
-    height: auto; /* adjusts to content */
+    width: 90%;
+    max-width: 400px; /* Increased max-width for better desktop look */
+    min-height: 280px;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
+    display: flex; /* Flexbox for better content alignment */
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .review-card:hover {
@@ -457,7 +474,7 @@
     color: #444;
     font-style: italic;
     line-height: 1.5;
-    flex-grow: 1;
+    flex-grow: 1; /* Allows text to take up available space */
     margin-bottom: 10px;
   }
 
@@ -469,6 +486,7 @@
     font-size: 0.9rem;
     font-weight: 500;
     transition: color 0.3s ease;
+    align-self: center; /* Center the button */
   }
 
   .view-more:hover {
@@ -504,13 +522,16 @@
     border: none;
     color: #333;
     font-size: 1.3rem;
-    width: 60px;
+    width: 36px; /* Smaller width */
     height: 36px;
+    line-height: 36px;
+    text-align: center;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     z-index: 10;
     transition: all 0.3s ease;
+    padding: 0;
   }
 
   .arrow:hover {
@@ -519,17 +540,17 @@
   }
 
   .prev {
-    left: -20px;
+    left: 0px; /* Position closer to the edge */
   }
 
   .next {
-    right: -20px;
+    right: 0px; /* Position closer to the edge */
   }
 
-  /* 📱 Responsive Adjustments */
+  /* 📱 Responsive Adjustments for Reviews */
   @media (max-width: 1024px) {
     .review-card {
-      height: 370px;
+      min-height: 350px; /* Adjusted min-height for 2-column layout */
     }
   }
 
@@ -538,32 +559,36 @@
       font-size: 1.7rem;
     }
     .review-card {
-      width: 95%; /* mobile-friendly */
-      max-width: 380px; /* card scales up a little */
+      min-height: 280px; /* Revert min-height for single column */
+      width: 95%;
+      max-width: 380px;
       padding: 20px;
       margin: 12px auto;
     }
     .arrow {
-      width: 50px;
+      width: 32px;
       height: 32px;
-      font-size: 1.1rem;
+      font-size: 1rem;
+      line-height: 32px;
     }
   }
 
   @media (max-width: 480px) {
     .arrow {
       display: none;
-      width: 50px;
     }
     .review-card {
       width: 100%;
-      max-width: 350px; /* fits smaller phones */
+      max-width: 350px;
       padding: 18px;
       margin: 10px auto;
     }
+    .reviews-carousel {
+      padding: 0 10px;
+    }
   }
 
-  /* 🌙 Modal Styles */
+  /* 🌙 Modal Styles - unchanged and kept inside the wrapper */
   .modal-overlay {
     position: fixed;
     top: 0;
@@ -621,10 +646,6 @@
     font-size: 1.5rem;
     cursor: pointer;
     color: #333;
-  }
-
-  .slick-slider {
-    overflow: hidden;
   }
 
   @keyframes fadeIn {

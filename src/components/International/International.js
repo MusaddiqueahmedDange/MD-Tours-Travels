@@ -21,6 +21,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import SearchIcon from "@mui/icons-material/Search"; // <--- New Import for Search Icon
+import BannerImage from "./IntImages/international.png";
 
 // Assuming this path to your data file
 import international from "./destinationsData";
@@ -56,6 +57,35 @@ const dummyDest = {
     "International and domestic airfare",
     "Visa fees and processing charges",
   ],
+};
+
+// -------------------------------------------------------------------
+// UPDATED: HeroBanner Component
+// -------------------------------------------------------------------
+
+const HeroBanner = () => {
+  // Using a vibrant image placeholder of popular international landmarks for a travel theme
+
+  return (
+    <div className="hero-banner-container">
+      <img
+        src={BannerImage}
+        alt="International Destinations Banner - World Landmarks"
+        className="hero-banner-image"
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src =
+            "https://placehold.co/1920x450/004a80/ffffff?text=Discover+Your+Next+Adventure";
+        }}
+      />
+      <div className="hero-content-overlay">
+        <h1 className="hero-title">International Destinations</h1>
+        <p className="hero-subtitle">
+          Explore curated international packages and find your dream vacation.
+        </p>
+      </div>
+    </div>
+  );
 };
 
 // -------------------------------------------------------------------
@@ -343,8 +373,10 @@ const International = () => {
 
     const lowerCaseSearch = searchTerm.toLowerCase();
 
-    return allDestinations.filter((dest) =>
-      dest.title.toLowerCase().includes(lowerCaseSearch)
+    return allDestinations.filter(
+      (dest) =>
+        dest.title.toLowerCase().includes(lowerCaseSearch) ||
+        dest.duration.toLowerCase().includes(lowerCaseSearch)
     );
   }, [searchTerm, allDestinations]); // Dependencies: recalculate only when search term or data changes
 
@@ -386,108 +418,114 @@ const International = () => {
 
   // Otherwise, render the main list view
   return (
-    <Container className="international-list-container">
-      {/* Centering the heading */}
+    <>
+      {/* NEW: Hero Banner at the top of the page */}
+      <HeroBanner />
 
-      <Box className="list-heading-wrapper">
-        <Typography variant="h4" className="list-heading-text">
-          Popular International Destinations
-        </Typography>
-      </Box>
+      <Container className="international-list-container">
+        {/* Centering the heading */}
 
-      {/* Search Bar - Professional Look */}
-      <Box sx={{ mb: 4, display: "flex", justifyContent: "center" }}>
-        <TextField
-          label="Search Destination"
-          variant="outlined"
-          value={searchTerm}
-          onChange={handleSearchChange}
-          fullWidth={false} // Allow it to be centered and not full width
-          sx={{ maxWidth: "600px", width: "100%" }} // Adjust width for professional look
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon />
-              </InputAdornment>
-            ),
-          }}
-        />
-      </Box>
-      {/* End Search Bar */}
-
-      {/* Container for the List and Pagination Top (used for scrolling) */}
-      <div id="destination-list-top-anchor">
-        {/* Card Grid */}
-        <Grid
-          className="destination-card-grid"
-          container
-          spacing={4}
-          justifyContent="center"
-        >
-          {currentDestinations.length > 0 ? (
-            currentDestinations.map((dest) => (
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={4}
-                // lg={3} // Adjusted for 4 columns on large screens
-                key={dest.id}
-                className="destination-card-item"
-              >
-                <Card className="destination-summary-card">
-                  {/* On click, set the destination to state to render the detail view (full page) */}
-                  <CardActionArea
-                    onClick={() => setSelectedDestination(dest)}
-                    className="card-click-area"
-                  >
-                    <CardMedia
-                      component="img"
-                      height="200"
-                      image={dest.image}
-                      alt={dest.title}
-                    />
-                    <CardContent className="card-info-content">
-                      <Typography variant="h6">{dest.title}</Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        <CalendarMonthIcon className="duration-icon-list" />
-                        {dest.duration || "Details available on click"}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Grid>
-            ))
-          ) : (
-            <Grid item xs={12}>
-              <Typography
-                variant="h6"
-                align="center"
-                className="empty-results-message"
-              >
-                No destinations available. {searchTerm && `for "${searchTerm}"`}
-              </Typography>
-            </Grid>
-          )}
-        </Grid>
-      </div>
-
-      {/* Pagination Component */}
-      {totalPages > 1 && (
-        <Box className="pagination-controls-container list-pagination-bottom">
-          <Pagination
-            count={totalPages}
-            page={currentPage}
-            onChange={handlePageChange}
-            color="primary"
-            size="large"
-            showFirstButton
-            showLastButton
-            className="styled-pagination"
+        {/* Search Bar - Professional Look */}
+        <Box sx={{ mb: 4, display: "flex", justifyContent: "center" }}>
+          <TextField
+            label="Search Destination"
+            variant="outlined"
+            value={searchTerm}
+            onChange={handleSearchChange}
+            fullWidth={false} // Allow it to be centered and not full width
+            sx={{ maxWidth: "600px", width: "100%" }} // Adjust width for professional look
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon />
+                </InputAdornment>
+              ),
+            }}
           />
         </Box>
-      )}
-    </Container>
+        {/* End Search Bar */}
+
+        {/* Container for the List and Pagination Top (used for scrolling) */}
+        <div id="destination-list-top-anchor">
+          {/* Card Grid */}
+          <Grid
+            className="destination-card-grid"
+            container
+            spacing={4}
+            justifyContent="center"
+          >
+            {currentDestinations.length > 0 ? (
+              currentDestinations.map((dest) => (
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  // lg={3} // Adjusted for 4 columns on large screens
+                  key={dest.id}
+                  className="destination-card-item"
+                >
+                  <Card className="destination-summary-card">
+                    {/* On click, set the destination to state to render the detail view (full page) */}
+                    <CardActionArea
+                      onClick={() => setSelectedDestination(dest)}
+                      className="card-click-area"
+                    >
+                      <CardMedia
+                        component="img"
+                        height="200"
+                        image={dest.image}
+                        alt={dest.title}
+                      />
+                      <CardContent className="card-info-content">
+                        <Typography variant="h6">{dest.title}</Typography>
+                        <div className="card-icon">
+                          <CalendarMonthIcon className="duration-icon-list" />
+                          <Typography
+                            variant="body2"
+                            color="text.secondary"
+                            className="duration"
+                          >
+                            {dest.duration || "Details available on click"}
+                          </Typography>
+                        </div>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </Grid>
+              ))
+            ) : (
+              <Grid item xs={12}>
+                <Typography
+                  variant="h6"
+                  align="center"
+                  className="empty-results-message"
+                >
+                  No destinations available.{" "}
+                  {searchTerm && `for "${searchTerm}"`}
+                </Typography>
+              </Grid>
+            )}
+          </Grid>
+        </div>
+
+        {/* Pagination Component */}
+        {totalPages > 1 && (
+          <Box className="pagination-controls-container list-pagination-bottom">
+            <Pagination
+              count={totalPages}
+              page={currentPage}
+              onChange={handlePageChange}
+              color="primary"
+              size="large"
+              showFirstButton
+              showLastButton
+              className="styled-pagination"
+            />
+          </Box>
+        )}
+      </Container>
+    </>
   );
 };
 
